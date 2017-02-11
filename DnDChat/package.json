@@ -1,0 +1,22 @@
+{
+  "name": "dndchat",
+  "version": "1.0.0",
+  "description": "BrickHack 16 Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m4ttr33d/dndcampaign_bh16.git"
+  },
+  "author": "Matthew Reed, Julianna Gabler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m4ttr33d/dndcampaign_bh16/issues"
+  },
+  "homepage": "https://github.com/m4ttr33d/dndcampaign_bh16#readme",
+  "dependencies": {
+    "mongodb": "^2.2.22"
+  }
+}
