@@ -19,6 +19,25 @@ app.get('/login', function (req, res) {
   res.render('login.pug', {})
 });
 
+//watson stuff
+var watson = require('watson-developer-cloud');
+var language_translator = watson.language_translator({
+	username:"d508c7dc-d12c-45f7-9f99-581565efae87",
+	password:"Y42RPmsr5qIk",
+	version:"v2"
+});
+
+language_translator.translate({
+	text:'hello', //get from input text
+	source:'en', //get from profile
+	target:'es' //get from profile
+	}, function(err, translation){
+	if(err)
+		console.log(err);
+	else
+		console.log(translation);
+});	
+
 //connection && listen on port
 io.on('connection', function(socket) {
   socket.on('chat message', function(msg){
