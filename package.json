@@ -6,9 +6,14 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.1",
+<<<<<<< HEAD
     "pug": "^2.0.0-beta11",
     "pug-cli": "^1.0.0-alpha6",
+=======
+    "watson-developer-cloud": "^2.18.0",
+>>>>>>> 5d9156a39a1e03872fccc787933d53773f70d357
     "socket.io": "^1.7.2",
-    "watson-developer-cloud": "^2.18.0"
+    "pug": "2.0.0",
+    "pug-cli": "1.0.0"
   }
 }
