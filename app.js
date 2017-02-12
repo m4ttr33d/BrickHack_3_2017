@@ -36,7 +36,7 @@ language_translator.translate({
 		console.log(err);
 	else
 		console.log(translation);
-});	
+});
 
 //connection && listen on port
 io.on('connection', function(socket) {

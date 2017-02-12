@@ -6,6 +6,7 @@ body { font: 16pt Helvetica, Arial;}
 #messages { list-style-type: none; margin: 0; padding: 0; }
 #messages li { margin: 0 2em 0 1em; padding: 1.5em 0; }
 #messages li:not(:last-child) { border-bottom: 1px solid #e0e0e0; }
+h3 { padding: 1em 0 0 .5em; }
 
 #chat-room {
   overflow: hidden;

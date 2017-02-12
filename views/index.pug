@@ -3,45 +3,39 @@ html
   head
     include includes/head.pug
   body
-    h3 Chat Room
     div(id="chat-room")
       div(id="room")
+        h3 Chat Room
         ul(id="messages")
       div(id="chatwrap")
         div(id="chatinput")
-          form.form-group.chatbox(name="chatbox")
+          form.form-group.chatbox(name="chatbox", id="chatBox")
             div.input-group.input-group-lg
               input.form-control(id="m", name="message", type="text", placeholder="Enter message here!")
               span.input-group-btn
-                button.btn.btn-primary(id = "chatbutton", type = "button") Send
+                button.btn.btn-primary(id="chatbutton", type = "button") Send
 
     script.
-      var btn = document.getElementById('chatbutton')
+      document.getElementById('chatbutton')
         .addEventListener("click", function (event) {
           event.preventDefault();
           submitChat();
         });
 
-      var input = document.getElementById("m")
-        .addEventListener("keydown", function (event) {
-            if (event.code == 13) {
-              submitChat();
-            }
-        })
+      $("#chatBox").submit(function () {
+        submitChat();
+        return false;
+      });
 
       function submitChat() {
-        var msg = user + ': ' + $('#m').val();
+        var msg = username + ': ' + $('#m').val();
         socket.emit('chat message', msg);
         $('#m').val('');
-      }
-
-      function onEnter(event, id) {
-        if (event.keyCode == 13) { document.getElementById(id).click(); }
         return false;
       }
 
       var socket = io();
-      var user = Math.random();
+      var username = Math.random();
       socket.on('chat message', function (msg) {
         $('#messages').append($('<li>').text(msg));
         var m = $('#room');
@@ -67,3 +61,8 @@ html
 //      </div>
 //    </div>
 //</div>
+//   var form = document.querySelector('form[name="chatbox"]');
+//      form.addEsventListener("click", function (event) {
+//        event.preventDefault();
+//        submitChat();
+//      });
