@@ -13,7 +13,24 @@ io.on('connection', function(socket) {
     });
 });
 
-http.listen(3000, function(){
+http.listen(port, function(){
     console.log('listening on *:3000');
 });
 
+var watson = require('watson-developer-cloud');
+var language_translator = watson.language_-translator({
+	username: '{mdr2130}',
+	password: '{CSkop991$}',
+	version:'v2'
+});
+language_translator.translate({
+	text:'hello',
+	source:'en', //get from profile
+	target:'es'
+	}, function(err, translation){
+	if(err)
+		console.log(err);
+	else
+		console.log(translation);
+		
+});	
