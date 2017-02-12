@@ -4,6 +4,7 @@
   "description": "Chat for translation",
   "dependencies": {
     "express": "^4.14.1",
-    "socket.io": "^1.7.2"
+    "socket.io": "^1.7.2",
+    "watson-developer-cloud": "^2.18.0"
   }
 }
