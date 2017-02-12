@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font: 16pt Helvetica, Arial;}
-form #chatbox { padding: 3px 3em 3px 3px; position: fixed; bottom: 0; width: 100%; margin: 1.5em; }
+.chatbox { padding: 3px 3em 3px 3px; position: fixed; bottom: 0; width: 100%; margin: 1.5em; }
 /*form input { border: 0; padding: 10px; margin-right: .5%; display: inline-block; }*/
 /*form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }*/
 #messages { list-style-type: none; margin: 0; padding: 0; }
