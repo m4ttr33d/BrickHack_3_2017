@@ -19,7 +19,7 @@ app.get('/login', function (req, res) {
   // var token = jwt.sign(profile, jwtSecret, { expiresInMinutes: 60*5 });
   //
   // res.json({token: token});
-  res.sendFile(__dirname + '/login.html');
+  res.sendFile(__dirname + '/html/login.html');
 });
 
 io.on('connection', function(socket) {
