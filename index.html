@@ -1,11 +1,17 @@
 <!doctype html>
 <html>
 <head>
-    <title>Socket.IO chat</title>
-    <link rel="stylesheet" type="text/css" href="./asset/css/test.css">
-  <style>
-
-  </style>
+  <title>ChattoTranslate</title>
+  <link rel="stylesheet" type="text/css" href="asset/css/chat-room.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="asset/js/chat-room.js"></script>
 </head>
 <body>
 <!--<div class="chat-room" id="chat-room">-->
@@ -14,8 +20,7 @@
 <!--<form action="">-->
     <!--<input id="m" autocomplete="off" /><button>Send</button>-->
 <!--</form>-->
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
 <div id="chat-room">
   <div id="room">
     <h2>Chat Room</h2>
@@ -24,35 +29,22 @@
 
       <div id="chatwrap">
         <div id="chatinput">
-          <form name="chatbox" class="userchat">
-            <input class="userchat chatbox" id="m" name="message" type="text" autocomplete="off" onkeydown="if (event.keyCode == 13) document.getElementById('chatbutton').click()" autofocus/><br>
-            <input class="userchat button" id="chatbutton" name="submitmsg" type="button" onclick="submitChat()" value="Send" />
+          <form name="chatbox" class="form-group">
+          <div class="input-group input-group-lg">
+            <input class="form-control" id="m" name="message" type="text" autocomplete="off" onkeydown="if (event.keyCode == 13) document.getElementById('chatbutton').click()" autofocus/><br>
+            <span class="input-group-btn">
+                <button class="btn btn-primary" id="chatbutton" type="button" onclick="submitChat()">Send</button>
+              </span>
+            </div>
+              <!--<input type="text" class="form-control">-->
+                <!--<span class="input-group-btn">-->
+                  <!--<button class="btn btn-primary" type="button" onclick="submitChat()">Send</button>-->
+                <!--</span>-->
+            </div>
           </form>
         </div>
       </div>
     </div>
 </div>
-
-<script>
-  var form = document.querySelector('form[name="chatbox"]');
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-  });
-
-  function submitChat() {
-    var msg = user + ': ' + $('#m').val();
-    socket.emit('chat message', msg );
-    $('#m').val('');
-  }
-
-  var socket = io();
-  user = Math.random();
-
-  socket.on('chat message', function(msg) {
-    $('#messages').append($('<li>').text(msg));
-    var m = $('#room');
-    m.scrollTop(m.prop("scrollHeight"));
-  });
-</script>
 </body>
 </html>
