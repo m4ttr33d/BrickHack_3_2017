@@ -1,0 +1,16 @@
+doctype html
+html
+  include includes/head.pug
+  body
+    div(id="chat-room")
+      h3 Chat Room
+      div(id="room")
+        ul(id="messages")
+      div(id="chatwrap")
+        div(id="chatinput")
+          form.form-group(id="chatbox")
+            div.form-control(id="m", name="message", type="text", autocomplete="off",
+              (onkeydown)="onEnter(this, 'chattbutton')", placeholder="Enter message here!")
+            span.input-group-btn
+              button.btn.btn-primary(id="chatbutton", (onclick)="submitChat()", type="button", value="Send") Send
+

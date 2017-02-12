@@ -1,8 +1,8 @@
 // <script>
-var form = document.querySelector('form[name="chatbox"]');
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-});
+// var form = document.querySelector('form[name="chatbox"]');
+// form.addEventListener("submit", function (event) {
+//   event.preventDefault();
+// });
 
 function submitChat() {
   var msg = user + ': ' + $('#m').val();
