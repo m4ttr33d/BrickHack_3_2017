@@ -19,9 +19,10 @@ http.listen(port, function(){
 
 var watson = require('watson-developer-cloud');
 var language_translator = watson.language_translator({
-	username:"d508c7dc-d12c-45f7-9f99-581565efae87",
-	password:"Y42RPmsr5qIk",
-	version:"v2"
+	     "password": "Y42RPmsr5qIk",
+     "url": "https://gateway.watsonplatform.net/language-translator/api",
+     "username": "d508c7dc-d12c-45f7-9f99-581565efae87"username: 'dfb9e5d8-930f-4707-9851-c7e0e504045d',
+	version: 'v2'
 });
 
 language_translator.translate({
