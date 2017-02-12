@@ -1,6 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var port = process.env.VCAP_APP_PORT || 8080;
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
@@ -12,6 +13,6 @@ io.on('connection', function(socket) {
     });
 });
 
-http.listen(3000, function(){
-    console.log('listening on *:3000');
+http.listen(8080, function(){
+    console.log('listening on *:8080');
 });
