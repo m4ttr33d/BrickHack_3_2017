@@ -19,3 +19,9 @@ socket.on('chat message', function(msg) {
   m.scrollTop(m.prop("scrollHeight"));
 });
 // </script>
+
+function onEnter(event, id) {
+  if (event.keyCode == 13) { document.getElementById(id).click(); }
+}
+function login() { console.log("hey"); }
+
