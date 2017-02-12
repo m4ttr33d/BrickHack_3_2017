@@ -2,15 +2,18 @@ doctype html
 html
   include includes/head.pug
 body
-  div.card
+  include includes/login-header
+  div.card.login
     div.card-block
-      h4.card-title Login
-      form.form-group(name="chatbox")
+      h3.card-title Login
+      form.form-group(name="login")
         input.form-control(id="email", type="email", name="message", placeholder="Enter your email")
         input.form-control(id="password", type="password", name="password", placeholder="Enter your password", (onkeydown)="onEnter(this, 'loginButton')")
         br
-        div.input-group.input-group-lg.pull-right
-          button.btn.btn-primary(id="loginButton", (onclick)="login(this)", type="button", value="Login") Login
-          button.btn.btn-link(id="cancelBtn", type="button", value="Cancel") Cancel
+        div.input-group.input-group-lg
+          span.float-right.col-md-8.col-sm-8
+          span.col-md-4.col-sm-4
+            button.btn.btn-primary.float-right(id="loginButton", (onclick)="login(this)") Login
+            button.btn.btn-link.float-right(id="registerBtn", (onclick)="register") Register
 include includes/footer.pug
 

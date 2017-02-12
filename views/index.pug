@@ -3,9 +3,9 @@ html
   head
     include includes/head.pug
   body
+    include includes/header
     div(id="chat-room")
       div(id="room")
-        h3 Chat Room
         ul(id="messages")
       div(id="chatwrap")
         div(id="chatinput")
@@ -41,28 +41,3 @@ html
         var m = $('#room');
         m.scrollTop(m.prop("scrollHeight"));
       });
-//<div id="chat-room">
-//  <div id="room">
-//    <h2>Chat Room</h2>
-//      <ul id="messages">
-//      </ul>
-//
-//      <div id="chatwrap">
-//        <div id="chatinput">
-//          <form name="chatbox" class="form-group">
-//          <div class="input-group input-group-lg">
-//            <input class="form-control" id="m" name="message" type="text" autocomplete="off" onkeydown="onEnter(this,'chatbutton')" autofocus/><br>
-//            <span class="input-group-btn">
-//                <button class="btn btn-primary" id="chatbutton" type="button" onclick="submitChat()">Send</button>
-//              </span>
-//            </div>
-//          </form>
-//        </div>
-//      </div>
-//    </div>
-//</div>
-//   var form = document.querySelector('form[name="chatbox"]');
-//      form.addEsventListener("click", function (event) {
-//        event.preventDefault();
-//        submitChat();
-//      });
