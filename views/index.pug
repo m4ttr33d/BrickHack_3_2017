@@ -8,9 +8,9 @@ html
         ul(id="messages")
       div(id="chatwrap")
         div(id="chatinput")
-          form.form-group(name="chatbox")
+          form.form-group(id="chatbox")
             div.form-control(id="m", name="message", type="text", autocomplete="off",
               (onkeydown)="onEnter(this, 'chattbutton')", placeholder="Enter message here!")
             span.input-group-btn
-              button.btn.btn-primary(id="chatbutton", (onclick)="submitChat()", value="Send") Send
+              button.btn.btn-primary(id="chatbutton", (onclick)="submitChat()", type="button", value="Send") Send
 
