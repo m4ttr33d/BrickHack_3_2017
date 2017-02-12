@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "Chat for translation",
   "repository": "https://github.com/m4ttr33d/dndcampaign_bh16",
-  "license": "MIT"
+  "license": "MIT",
   "dependencies": {
     "express": "^4.14.1",
+    "pug": "^2.0.0-beta11",
+    "pug-cli": "^1.0.0-alpha6",
     "socket.io": "^1.7.2",
     "watson-developer-cloud": "^2.18.0"
   }

@@ -19,6 +19,7 @@ app.get('/login', function (req, res) {
   res.render('login.pug', {})
 });
 
+
 //watson stuff
 var watson = require('watson-developer-cloud');
 var language_translator = watson.language_translator({
